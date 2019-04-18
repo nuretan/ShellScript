@@ -21,7 +21,7 @@ expect \"(yes/no)?\" {
 expect \">\"
 send \"enable\n\" 
 expect \"Password:\"
-send ${ENABLE_PW}
+send \"${ENABLE_PW}\n"
 expect \"#\"
 
 interact
