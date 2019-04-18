@@ -3,6 +3,7 @@
 USERNAME="nuretan"
 IPADDRESS="127.0.0.1"
 LOGIN_PW="loginpw"
+ENABLE_PW="enpass"
 
 expect -c "
 
@@ -17,7 +18,11 @@ expect \"(yes/no)?\" {
 } \"password:\" {
       send \"${LOGIN_PW}\n\"
 }
-expect \"\]$ \"
- 
+expect \">\"
+send \"enable\n\" 
+expect \"Password:\"
+send ${ENABLE_PW}
+expect \"#\"
+
 interact
 "

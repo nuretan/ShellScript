@@ -17,7 +17,9 @@ expect \"(yes/no)?\" {
 } \"password:\" {
       send \"${LOGIN_PW}\n\"
 }
-expect \"\]$ \"
- 
+expect \"> \"
+send \"set cli screen-length 0\n\"
+expect \"> \"
+
 interact
 "
